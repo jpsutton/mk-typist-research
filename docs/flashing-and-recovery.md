@@ -2,7 +2,7 @@
 
 ## Update through the stock IAP
 
-This is how every image (patched stock, QMK, and stock again) was written to this unit. It keeps the stock IAP. Our client was a small Python script on Linux hidraw. It is not published yet, but the steps are fully described here and in [Stock IAP](stock-iap.md#update-protocol-cykb-over-hid).
+This is how every image (patched stock, QMK, and stock again) was written to this unit. It keeps the stock IAP. Our client is `cykb.py` in [jpsutton/mk-typist-tools](https://github.com/jpsutton/mk-typist-tools), a Python script for Linux hidraw. It carries out the steps below and extracts the image and version page from the vendor updater. Protocol details are in [Stock IAP](stock-iap.md#update-protocol-cykb-over-hid).
 
 1. **Enter the IAP** (04D9:1301): stock app command `0x11/0x00`, or Esc at plug-in or Fn+Esc on QMK.
 2. **Check** `0x12/0x00` (info) reports firmware offset 0x200 and page size 0x200, and `0x12/0x02` (mode) reports 0 (IAP).

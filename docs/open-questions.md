@@ -23,6 +23,6 @@ Contributions welcome, especially from owners of other units or related boards.
 ## Port
 
 - Persistent settings on the SPI flash (`wear_leveling` + `spi_flash`).
-- A public flashing tool for the CYKB protocol, or support for 04D9:1301 (and 04D9:1296 for the One 2) in pok3rtool. It can build the version page from the public updater.
+- Support for 04D9:1301 (and 04D9:1296 for the One 2) in pok3rtool, so the port does not depend on our own flasher ([mk-typist-tools](https://github.com/jpsutton/mk-typist-tools)).
 - A host-triggered IAP entry (for example a raw HID command), so a board with a wrong matrix can still reach the bootloader.
 - Upstreaming to QMK.

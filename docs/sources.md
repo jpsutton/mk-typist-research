@@ -1,6 +1,6 @@
 # Sources and credits
 
-Every external link in these docs, except links to this project's own QMK branch, is followed by an "archive" link to an Internet Archive copy, in case the original moves or disappears. Snapshots were taken or looked up on 2026-10-24; older snapshots may predate later changes to a page.
+Every external link in these docs, except links to this project's own repositories, is followed by an "archive" link to an Internet Archive copy, in case the original moves or disappears. Snapshots were taken or looked up on 2026-10-24; older snapshots may predate later changes to a page.
 
 ## Prior research this work builds on
 
@@ -82,4 +82,4 @@ Product page: [mechanicalkeyboards.com/products/mk-typist](https://mechanicalkey
 
 ## Tools used
 
-QMK CLI ([`ghcr.io/qmk/qmk_cli`](https://github.com/qmk/qmk_cli) ([archive](https://web.archive.org/web/20260911215028/https://github.com/qmk/qmk_cli))), [Ghidra](https://ghidra-sre.org/) ([archive](https://web.archive.org/web/20250512185340/https://ghidra-sre.org/)) (headless decompilation), GNU Arm toolchain `objdump`, pok3rtool, ht32-dfu-tool, hansemro's OpenOCD fork (built, not used on hardware), a multimeter, and Python on Linux hidraw for the IAP client and the key tester.
+QMK CLI ([`ghcr.io/qmk/qmk_cli`](https://github.com/qmk/qmk_cli) ([archive](https://web.archive.org/web/20260911215028/https://github.com/qmk/qmk_cli))), [Ghidra](https://ghidra-sre.org/) ([archive](https://web.archive.org/web/20250512185340/https://ghidra-sre.org/)) (headless decompilation), GNU Arm toolchain `objdump`, pok3rtool, ht32-dfu-tool, hansemro's OpenOCD fork (built, not used on hardware), a multimeter, and Python on Linux hidraw for the IAP client and the key tester (published in [mk-typist-tools](https://github.com/jpsutton/mk-typist-tools)).

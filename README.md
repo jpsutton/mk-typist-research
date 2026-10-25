@@ -6,6 +6,8 @@ Everything here was found on one unit (stock firmware V1.00.05) in October 2026.
 
 **QMK port:** branch [`mk-typist`](https://github.com/jpsutton/qmk_firmware/tree/mk-typist) of `jpsutton/qmk_firmware`, keyboard `mk/typist`. It runs on the stock bootloader, all 108 keys work, and the Num/Caps/Scroll indicators work. It is not in upstream QMK yet.
 
+**Tools:** [jpsutton/mk-typist-tools](https://github.com/jpsutton/mk-typist-tools) has the flasher for the stock bootloader, the vendor-updater extractor, the dump patch and the key tester.
+
 ## Summary
 
 | Item | Value | Confidence |

@@ -101,7 +101,7 @@ See [Indicator LEDs](indicator-leds.md). The port uses a custom `led_update_kb` 
 - **Persistent settings.** EEPROM is `transient`, so settings are lost at power-off. QMK has no HT32 embedded-flash driver. The proven path is annepro2's `wear_leveling` + `spi_flash` on the SPI flash (U5), once its wiring is checked and its stock contents are dumped.
 - **VIA.** A VIA keymap builds (about 23 KB when last measured), but without persistent EEPROM it is of little use.
 - **DIP switches.** `keyboard.json` maps `dip_switch.matrix_grid` on [15,0..3]. Unverified.
-- **Flashing.** QMK's `:flash` target does not know the CYKB protocol. See [Flashing and recovery](flashing-and-recovery.md).
+- **Flashing.** QMK's `:flash` target does not know the CYKB protocol. Use `cykb.py` from [mk-typist-tools](https://github.com/jpsutton/mk-typist-tools); see [Flashing and recovery](flashing-and-recovery.md).
 - **Upstreaming.** QMK review will likely ask for a few changes: no custom board definition in a keyboard PR, a pristine `default` keymap, VIA keymaps kept in a separate repo, a registered or acceptable USB ID, and an explanation of the custom flashing path.
 
 ## Build
