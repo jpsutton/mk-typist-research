@@ -1,0 +1,9 @@
+Claimed interface
+Getting device info...
+Model: HT32F52352
+Version: v101
+Page size: 512 B
+Flash size: 130560 B
+Flash security: true
+Option byte protection: true
+Page protection: 0xfffff000 0xffffffff 0xffffffff 0xffffffff

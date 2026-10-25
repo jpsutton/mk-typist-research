@@ -1,0 +1,2 @@
+device /dev/hidraw1 (app)
+{'boot_vid': 1241, 'boot_pid': 4865, 'fw_offset': 512, 'fw_pages': 231, 'page_size': 512, 'model': 'KB0301', 'mode': 1}

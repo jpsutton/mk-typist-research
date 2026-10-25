@@ -1,0 +1,7 @@
+device /dev/hidraw1 (iap)
+{'boot_vid': 1241, 'boot_pid': 4865, 'fw_offset': 512, 'fw_pages': 231, 'page_size': 512, 'model': 'KB0301', 'mode': 0}
+device /dev/hidraw1 (iap)
+updater/extracted/301-US_Layout-V1.00.05.bin: 31728 bytes, SHA-256 0094d2472a2e160d095387df2f05ce13f78a38d21d45bf1ac33f84264efaea9c
+expected sum ad62fb58 crc f2f1dee5
+device   sum ad62fb58 crc f2f1dee5
+MATCH

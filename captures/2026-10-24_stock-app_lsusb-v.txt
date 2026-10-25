@@ -1,0 +1,155 @@
+## lsusb -v -d 04d9:0301
+Couldn't open device, some information will be missing
+
+Bus 001 Device 008: ID 04d9:0301 Holtek Semiconductor, Inc. USB-HID Keyboard
+Negotiated speed: Full Speed (12Mbps)
+Device Descriptor:
+  bLength                18
+  bDescriptorType         1
+  bcdUSB               2.00
+  bDeviceClass            0 [unknown]
+  bDeviceSubClass         0 [unknown]
+  bDeviceProtocol         0 
+  bMaxPacketSize0        64
+  idVendor           0x04d9 Holtek Semiconductor, Inc.
+  idProduct          0x0301 USB-HID Keyboard
+  bcdDevice            1.05
+  iManufacturer           0 
+  iProduct                1 USB-HID Keyboard
+  iSerial                 0 
+  bNumConfigurations      1
+  Configuration Descriptor:
+    bLength                 9
+    bDescriptorType         2
+    wTotalLength       0x005b
+    bNumInterfaces          3
+    bConfigurationValue     1
+    iConfiguration          0 
+    bmAttributes         0xa0
+      (Bus Powered)
+      Remote Wakeup
+    MaxPower              100mA
+    Interface Descriptor:
+      bLength                 9
+      bDescriptorType         4
+      bInterfaceNumber        0
+      bAlternateSetting       0
+      bNumEndpoints           1
+      bInterfaceClass         3 Human Interface Device
+      bInterfaceSubClass      1 Boot Interface Subclass
+      bInterfaceProtocol      1 Keyboard
+      iInterface              0 
+        HID Device Descriptor:
+          bLength                 9
+          bDescriptorType        33
+          bcdHID               1.11
+          bCountryCode            0 Not supported
+          bNumDescriptors         1
+          bDescriptorType        34 Report
+          wDescriptorLength      64
+          Report Descriptors: 
+            ** UNAVAILABLE **
+      Endpoint Descriptor:
+        bLength                 7
+        bDescriptorType         5
+        bEndpointAddress     0x81  EP 1 IN
+        bmAttributes            3
+          Transfer Type            Interrupt
+          Synch Type               None
+          Usage Type               Data
+        wMaxPacketSize     0x0008  1x 8 bytes
+        bInterval               1
+    Interface Descriptor:
+      bLength                 9
+      bDescriptorType         4
+      bInterfaceNumber        1
+      bAlternateSetting       0
+      bNumEndpoints           2
+      bInterfaceClass         3 Human Interface Device
+      bInterfaceSubClass      0 [unknown]
+      bInterfaceProtocol      0 
+      iInterface              2 
+        HID Device Descriptor:
+          bLength                 9
+          bDescriptorType        33
+          bcdHID               1.11
+          bCountryCode            0 Not supported
+          bNumDescriptors         1
+          bDescriptorType        34 Report
+          wDescriptorLength      34
+          Report Descriptors: 
+            ** UNAVAILABLE **
+      Endpoint Descriptor:
+        bLength                 7
+        bDescriptorType         5
+        bEndpointAddress     0x83  EP 3 IN
+        bmAttributes            3
+          Transfer Type            Interrupt
+          Synch Type               None
+          Usage Type               Data
+        wMaxPacketSize     0x0040  1x 64 bytes
+        bInterval               1
+      Endpoint Descriptor:
+        bLength                 7
+        bDescriptorType         5
+        bEndpointAddress     0x04  EP 4 OUT
+        bmAttributes            3
+          Transfer Type            Interrupt
+          Synch Type               None
+          Usage Type               Data
+        wMaxPacketSize     0x0040  1x 64 bytes
+        bInterval               1
+    Interface Descriptor:
+      bLength                 9
+      bDescriptorType         4
+      bInterfaceNumber        2
+      bAlternateSetting       0
+      bNumEndpoints           1
+      bInterfaceClass         3 Human Interface Device
+      bInterfaceSubClass      0 [unknown]
+      bInterfaceProtocol      0 
+      iInterface              0 
+        HID Device Descriptor:
+          bLength                 9
+          bDescriptorType        33
+          bcdHID               1.11
+          bCountryCode            0 Not supported
+          bNumDescriptors         1
+          bDescriptorType        34 Report
+          wDescriptorLength     203
+          Report Descriptors: 
+            ** UNAVAILABLE **
+      Endpoint Descriptor:
+        bLength                 7
+        bDescriptorType         5
+        bEndpointAddress     0x82  EP 2 IN
+        bmAttributes            3
+          Transfer Type            Interrupt
+          Synch Type               None
+          Usage Type               Data
+        wMaxPacketSize     0x0040  1x 64 bytes
+        bInterval               1
+
+## kernel log (last 40 USB lines)
+Oct 23 21:41:55 TVG-JPS-LNX-03 kernel: mceusb 7-1.2:1.0: short-range (0x2) receiver active
+Oct 23 21:42:16 TVG-JPS-LNX-03 kernel: mceusb 7-1.2:1.0: long-range (0x1) receiver active
+Oct 23 21:45:47 TVG-JPS-LNX-03 kernel: usb 7-1.1: USB disconnect, device number 15
+Oct 23 23:04:13 TVG-JPS-LNX-03 kernel: usb 7-1.1: new full-speed USB device number 16 using xhci_hcd
+Oct 23 23:04:13 TVG-JPS-LNX-03 kernel: usb 7-1.1: New USB device found, idVendor=2e8a, idProduct=000f, bcdDevice= 1.00
+Oct 23 23:04:13 TVG-JPS-LNX-03 kernel: usb 7-1.1: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+Oct 23 23:04:13 TVG-JPS-LNX-03 kernel: usb 7-1.1: Product: RP2350 Boot
+Oct 23 23:04:13 TVG-JPS-LNX-03 kernel: usb 7-1.1: Manufacturer: Raspberry Pi
+Oct 23 23:04:13 TVG-JPS-LNX-03 kernel: usb 7-1.1: SerialNumber: 1B6D9C081337F7D9
+Oct 23 23:04:13 TVG-JPS-LNX-03 kernel: usb-storage 7-1.1:1.0: USB Mass Storage device detected
+Oct 23 23:04:13 TVG-JPS-LNX-03 kernel: scsi host1: usb-storage 7-1.1:1.0
+Oct 23 23:04:52 TVG-JPS-LNX-03 kernel: usb 7-1.1: USB disconnect, device number 16
+Oct 23 23:04:52 TVG-JPS-LNX-03 kernel: usb 7-1.1: new full-speed USB device number 17 using xhci_hcd
+Oct 23 23:04:52 TVG-JPS-LNX-03 kernel: usb 7-1.1: New USB device found, idVendor=04d8, idProduct=fd08, bcdDevice= 1.00
+Oct 23 23:04:52 TVG-JPS-LNX-03 kernel: usb 7-1.1: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+Oct 23 23:04:52 TVG-JPS-LNX-03 kernel: usb 7-1.1: Product: IR blaster (IR Toy compatible)
+Oct 23 23:04:52 TVG-JPS-LNX-03 kernel: usb 7-1.1: Manufacturer: fire-blaster
+Oct 23 23:04:52 TVG-JPS-LNX-03 kernel: usb 7-1.1: SerialNumber: 1B6D9C081337F7D9
+Oct 23 23:04:52 TVG-JPS-LNX-03 kernel: rc rc1: Infrared Toy as /devices/pci0000:00/0000:00:08.3/0000:c6:00.4/usb7/7-1/7-1.1/7-1.1:1.1/rc/rc1
+Oct 23 23:04:52 TVG-JPS-LNX-03 kernel: input: Infrared Toy as /devices/pci0000:00/0000:00:08.3/0000:c6:00.4/usb7/7-1/7-1.1/7-1.1:1.1/rc/rc1/input35
+Oct 23 23:05:56 TVG-JPS-LNX-03 kernel: usb 7-1.1: USB disconnect, device number 17
+Oct 23 23:05:57 TVG-JPS-LNX-03 kernel: usb 7-1.1: new full-speed USB device number 18 using xhci_hcd

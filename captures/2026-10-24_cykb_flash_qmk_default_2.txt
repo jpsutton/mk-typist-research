@@ -1,0 +1,7 @@
+device /dev/hidraw1 (iap)
+qmk_firmware/mk_typist_default.bin: 19188 bytes, SHA-256 2faee54e6d8d08781a474f9e6d4042920adbcf9dbeee66e417ef88b4ccfab1fa
+updater/extracted/301-version-page-V1.00.05.bin: 180 bytes, SHA-256 99452e81b7674c8f2473cf2e83a83dc85fce5039972c9a63506a45290987d373
+erase 0x3000..0xae00
+write app at 0x3200
+verify OK; write version page
+done; run reboot-fw to start the app

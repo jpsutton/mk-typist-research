@@ -1,0 +1,6 @@
+device /dev/hidraw1 (iap)
+qmk_firmware/mk_typist_default.bin: 19180 bytes, SHA-256 04a5f6b48e5a9721d2c9d2cb87073093a6384027d64780e67301108dc71f92ae
+updater/extracted/301-version-page-V1.00.05.bin: 180 bytes, SHA-256 99452e81b7674c8f2473cf2e83a83dc85fce5039972c9a63506a45290987d373
+erase 0x3000..0xae00
+write app at 0x3200
+verify FAILED (0, 0); version page NOT written, IAP stays resident
