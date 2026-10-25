@@ -99,12 +99,21 @@ The updater writes this page **last**, after the application has been written an
 | Address | Value | Meaning |
 | --- | --- | --- |
 | 0x3000 | u32 0x1A, then UTF-16LE `V1.00.05` | Firmware version string. Read by the stock app through commands `0x12/0x20`–`0x27` |
-| 0x3078–0x3093 | 7 words: 0x00100004, 0x00010005, 0x000000DB, 0xEFFFFFFF, 0x00000001, 0x00000000, 0x030104D9 | Checked by the IAP (none may be 0xFFFFFFFF). The last word holds the application VID/PID halves (0x04D9, 0x0301). Other fields unknown |
+| 0x3078–0x3093 | 7 words: 0x00100004, 0x00010005, 0x000000DB, 0xEFFFFFFF, 0x00000001, 0x00000000, 0x030104D9 | Checked by the IAP (none may be 0xFFFFFFFF). The second word is the firmware version (0x0001_0005 = V1.00.05; the Ducky One 2's is 0x00010101 = V1.01.01). The third matches the `h00DB` field of the USB model string `CYRM02p0301h00DBr0005`. The last holds the application VID/PID halves (0x04D9, 0x0301). Other fields unknown |
 | 0x30B0 | 0x001C5AA5 | Magic: low 18 bits 0x5AA5, n = 7 (the 7 words above) |
 
 Raw read: [`captures/2026-10-24_cykb_info.txt`](../captures/2026-10-24_cykb_info.txt).
 
-We wrote these same 180 bytes back after each QMK update, and the IAP accepted them. Whether other units carry different values (for example per-layout or per-version) is unknown. Nothing in the page looks unit-specific.
+We wrote these same 180 bytes back after each QMK update, and the IAP accepted them.
+
+**The page is per product, not per unit.** The vendor updater carries a 180-byte version template next to each firmware image (pok3rtool's `extract_maav102` decodes it but does not save it). The Typist template (SHA-256 `865a809a163579e8d1f2bc68c0b6c3b742e4cc661be220e7d085d3098ac25e4b`) differs from this unit's live page in two bytes only:
+
+```text
+template, 0xA8: ffffffff ffff1cff a55aff00
+live,   0x30A8: ffffffff ffffffff a55a1c00
+```
+
+The template keeps the magic's 0x1C byte at offset 0xAE. On the keyboard it sits at 0xB2, completing the magic word 0x001C5AA5. To build the page from the public updater, take the template, move byte 0xAE to 0xB2 and set 0xAE to 0xFF. The result matches the live page byte for byte (SHA-256 `99452e81…`). The Ducky One 2's US and EU templates, backlit and non-backlit, are all identical to each other (see [Related boards](related-boards.md#ducky-one-2-full-size)).
 
 Version-page writes (below 0x3200) are **not** encrypted.
 

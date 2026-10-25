@@ -14,13 +14,15 @@ Contributions welcome, especially from owners of other units or related boards.
 
 - **Watchdog-counter recovery** (five watchdog resets leave the IAP resident) is from disassembly and untested.
 - **Power-cycle from the IAP** should start the application; untested.
-- **Version page fields** at 0x3078–0x3093 other than the VID/PID word. Are they the same on other units and layouts?
+- **Version page fields.** Answered in part: the page is per product and comes from the updater's template (see [Stock IAP](stock-iap.md#version-page-0x30000x31ff)). The first word (0x00100004 on the Typist, 0x00800004 on the One 2) and the 0xEFFFFFFF, 1 and 0 words are still unexplained.
 - **IAP versions.** Do other units have the same IAP? Compare against SHA-256 `fbb68c38129d066a05ddcd990bf566a937aef91243a7c6e89014ce3bf9429841` (0x0000–0x2FFF).
+- **Ducky One 2 full size.** Its updaters match the Typist's pin tables, keymap and application header byte for byte (see [Related boards](related-boards.md#ducky-one-2-full-size)). Needs a real board: the read-only checks listed there, then a QMK test once the port has a matrix-independent way into the IAP. The RGB model's firmware is not public.
 - **Mouse mode.** Which Fn combination toggles it, and what do codes 0xE8/0xE9, 0xF0/0xF1 and 0xFE do?
 - **Option bytes** at 0x1FF00: not read.
 
 ## Port
 
 - Persistent settings on the SPI flash (`wear_leveling` + `spi_flash`).
-- A public flashing tool for the CYKB protocol, or support for 04D9:1301 in pok3rtool.
+- A public flashing tool for the CYKB protocol, or support for 04D9:1301 (and 04D9:1296 for the One 2) in pok3rtool. It can build the version page from the public updater.
+- A host-triggered IAP entry (for example a raw HID command), so a board with a wrong matrix can still reach the bootloader.
 - Upstreaming to QMK.

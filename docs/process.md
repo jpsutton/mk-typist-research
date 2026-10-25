@@ -55,6 +55,12 @@ The whole project, from first look to QMK with working indicators, ran on 2026-1
 - Traced the stock indicator routine to MBI5042 output 15 on rows 4–7, with active-high row switches multiplexed by a BFTM1 interrupt.
 - Ported hansemro's MBI5042 driver. Num, Caps and Scroll work. The fourth LED (M) turned out to be the stock numpad mouse mode.
 
+## 10. Ducky One 2 comparison (static)
+
+- Downloaded Ducky's own One 2 full-size updaters and decoded them with the same pok3rtool extractor. It reproduced the Typist image's hash, which validated the method.
+- Byte-searched the One 2 images for the Typist's pin tables, keymap and application header. All were found unchanged.
+- Captured each updater's version template. This showed the version page is per product and can be built from the updater.
+
 ## Safety practices that paid off
 
 - Every write to the MCU was approved by the owner, with the exact command shown first.

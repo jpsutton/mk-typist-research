@@ -61,9 +61,22 @@ The revisions we actually worked from (not redistributed):
 | --- | --- | --- |
 | `MK_Typist_V1.00.05NL.exe` (3,015,112 B) | Original, now 404: `https://mechanicalkeyboards.com/downloads/MK_Typist_V1.00.05NL.exe`. Archived: [Wayback Machine, 2023-07-20](https://web.archive.org/web/20230720170032/https://mechanicalkeyboards.com/downloads/MK_Typist_V1.00.05NL.exe) | `cc214797c5e9afe91bd077e447908dd633759337e733629fae8aed225e8ca440` |
 | Application extracted with `pok3rtool extract maav102` (31,728 B, plaintext, "US Layout" V1.00.05) | Derived from the updater | `0094d2472a2e160d095387df2f05ce13f78a38d21d45bf1ac33f84264efaea9c` |
-| Version page, first 0xB4 bytes of 0x3000 | Hex in [Stock IAP](stock-iap.md#version-page-0x30000x31ff) | `99452e81b7674c8f2473cf2e83a83dc85fce5039972c9a63506a45290987d373` |
+| Version template inside the updater (180 B) | Derived from the updater | `865a809a163579e8d1f2bc68c0b6c3b742e4cc661be220e7d085d3098ac25e4b` |
+| Version page, first 0xB4 bytes of 0x3000 | Hex in [Stock IAP](stock-iap.md#version-page-0x30000x31ff); also the template above with one byte moved | `99452e81b7674c8f2473cf2e83a83dc85fce5039972c9a63506a45290987d373` |
 | Full flash dump of this unit, 0x00000–0x1FDFF (two reads) | Not published | `35f6e0166c282715dfe107b4c440e718093ec5ff5e32a271babccc3906c15226` |
 | Stock IAP region of that dump, 0x0000–0x2FFF | Not published | `fbb68c38129d066a05ddcd990bf566a937aef91243a7c6e89014ce3bf9429841` |
+
+Ducky One 2 full-size updaters, used only for the [comparison in Related boards](related-boards.md#ducky-one-2-full-size). Both are listed on Ducky's [downloads page](https://ducky.global/pages/downloads) ([archive](https://web.archive.org/web/20261025015638/https://ducky.global/pages/downloads)) under "One 2 100% Full Size".
+
+| File | Where to get it | SHA-256 |
+| --- | --- | --- |
+| `One2_NonBacklit_V1.01.01.exe` (3,045,060 B), DKON1808 | [Ducky CDN](https://cdn.shopify.com/s/files/1/0728/4382/1295/files/One2_NonBacklit_V1.01.01.exe) ([archive](https://web.archive.org/web/20261025015659/https://cdn.shopify.com/s/files/1/0728/4382/1295/files/One2_NonBacklit_V1.01.01.exe)) | `7445d7e89af0d6f0ea536460df21479e4e3d97fbfda6a35097c24580339c7446` |
+| `One2_Backlit_V1.01.01.exe` (3,046,892 B), DKON1808S | [Ducky CDN](https://cdn.shopify.com/s/files/1/0728/4382/1295/files/One2_Backlit_V1.01.01.exe) ([archive](https://web.archive.org/web/20261025015711/https://cdn.shopify.com/s/files/1/0728/4382/1295/files/One2_Backlit_V1.01.01.exe)) | `9c7e420ae4205211e635e6204b410dee35c51269d6497dadb53c3599ec205b03` |
+| Non-backlit "US Layout" image (30,744 B) | Derived | `3404fc82adc3c1891ca445dbbc79b8f54940e443eae26e1f63466fd2da54b358` |
+| Non-backlit "EU Layout" image (30,752 B) | Derived | `6b5617444634fab11e01b8022ba0d40d861b8ed4c5e2154fe8d62dda4aafe74f` |
+| Backlit "US Layout" image (31,660 B) | Derived | `fdf05a2b4896534ce139dcea06a18d597f2c457237ebfb369cc853c4c0d12f12` |
+| Backlit "EU Layout" image (31,668 B) | Derived | `4369ea63a574a4efc9212af5e43a9ee9c2fc32665bb673c05f63ea761c68990a` |
+| Version template, identical in all four | Derived | `88d8f4b2ed40b62f48d6a51819b8cfd40ac85703edb9065c57908e1a365a0820` |
 
 Product page: [mechanicalkeyboards.com/products/mk-typist](https://mechanicalkeyboards.com/products/mk-typist) ([archive](https://web.archive.org/web/20251118105630/https://mechanicalkeyboards.com/products/mk-typist)).
 

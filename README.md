@@ -22,6 +22,7 @@ Everything here was found on one unit (stock firmware V1.00.05) in October 2026.
 | Flash layout | IAP 0x0000–0x2FFF, version page 0x3000–0x31FF, application from 0x3200 | Confirmed |
 | USB IDs | Stock app 04D9:0301, stock IAP 04D9:1301, ROM ISP 04D9:8010 | Confirmed |
 | Updater | `MK_Typist_V1.00.05NL.exe`, Cheng Yong `maaV102` format | Confirmed |
+| Ducky One 2 full size | Same firmware platform. Ducky's updaters have byte-identical pin tables, keymap and application header, so this QMK port likely runs on it | Static analysis only; no One 2 tested |
 
 ## Contents
 
@@ -36,7 +37,7 @@ Everything here was found on one unit (stock firmware V1.00.05) in October 2026.
 - [Debug access](docs/debug-access.md): SWD header, OpenOCD, ROM ISP, what the lock blocks
 - [Porting QMK](docs/qmk-port.md): what the port needed and the traps we hit
 - [Flashing and recovery](docs/flashing-and-recovery.md): update procedure and recovery options
-- [Related boards](docs/related-boards.md): Night Typist, MasterKeys Pro L White, Anne Pro 2, Vortex
+- [Related boards](docs/related-boards.md): Ducky One 2 (firmware comparison), Night Typist, MasterKeys Pro L White, Anne Pro 2, Vortex
 - [How we got here](docs/process.md): the order of work and the methods used
 - [Open questions](docs/open-questions.md)
 - [Sources and credits](docs/sources.md)

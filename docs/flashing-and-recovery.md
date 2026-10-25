@@ -10,7 +10,7 @@ This is how every image (patched stock, QMK, and stock again) was written to thi
 4. **Encode** the image: XOR it with pok3rtool's 13-word key, word by word, the key repeating every 52 bytes.
 5. **Write** the encoded image at offset 0x200: `0x1E/0x01` set address, then `0x1F/52` packets of exactly 52 bytes. Each reply is `0x1E/0x02` with the next offset; check it.
 6. **Verify** with `0x1D/0x01` (sum) and `0x1D/0x02` (CRC) over offset 0x200, image length. Compare with the sum and CRC-32 of the encoded image. **If they differ, stop.** The version page is still erased, so the IAP stays in control and you can retry.
-7. **Write the version page** at offset 0, unencoded (180 bytes on this unit; see [Stock IAP](stock-iap.md#version-page-0x30000x31ff)).
+7. **Write the version page** at offset 0, unencoded. It is 180 bytes, built from the updater's version template (see [Stock IAP](stock-iap.md#version-page-0x30000x31ff)), so no read from the keyboard is needed.
 8. **Start the application** with `0x11/0x01`.
 
 Requirements on the image: built for 0x3200, the 12-byte application header at 0x3BF8, at least 0x1000 bytes long, and a multiple of 4 bytes (pad with 0xFF).
